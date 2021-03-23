@@ -415,6 +415,33 @@ t - Theme toggle
 
 ---
 
+### Edit Link for Posts
+
+Add a button to suggest changes by using the file path of the post to link to a
+edit destination.
+
+```yml
+params:
+    editPost:
+        URL: "https://github.com/adityatelange/hugo-PaperMod/edit/exampleSite/content"
+        appendFilePath: true
+        Text: "Suggest Changes"
+```
+
+The example above would yield the following link for the post file `posts/papermod/papermod-features/index.md`:
+https://github.com/adityatelange/hugo-PaperMod/edit/exampleSite/content/posts/papermod/papermod-features/index.md
+
+| Parameter               | Required             | Default Value         |
+| ----------------------- | -------------------- | --------------------- |
+| editPost.URL            | true                 | -                     |
+| editPost.appendFilePath | false                | false                 |
+| editPost.Text           | false                | "Edit"                |
+
+Since the link generated is a regular HTML anchor tag `<a href=...>`, you can
+also use other URL schemas like `mailto://`, e.g.
+`URL: "mailto://mail@example.com?subject=Suggesting changes for "`
+
+---
 ### Enhanced SEO
 
 **Enabled only when `env: production`**
